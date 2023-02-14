@@ -31,7 +31,7 @@ def webServer(port=13331):
             outputdata = b"Content-Type: text/html; charset=UTF-8\r\n"
             # Fill in start -This variable can store your headers you want to send for any valid or invalid request.
             # Content-Type above is an example on how to send a header as bytes
-            connectionSocket.send(outputdata.encode())
+            
             # Fill in end
 
             # Send an HTTP header line into socket for a valid request. What header should be sent for a response that is ok?

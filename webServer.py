@@ -29,7 +29,7 @@ def webServer(port=13331):
             f = open(filename[1:], "r") # fill in start #fill in end)
             data = f.read()
             print(data)
-            outputdata = b"Content-Type: text/html; charset=UTF-8\r\n\r\n"
+            outputdata = "Content-Type: text/html; charset=UTF-8\r\n\r\n"
             # Fill in start -This variable can store your headers you want to send for any valid or invalid request.
             # Content-Type above is an example on how to send a header as bytes
 
@@ -47,7 +47,8 @@ def webServer(port=13331):
             for i in range(0, len(data)):  # for line in file
             # Fill in start - send your html file contents #Fill in end
               connectionSocket.send(data[i].encode())
-            connectionSocket.send("\r\n\r\n".encode())    
+            connectionSocket.send(outputdata.encode())
+            connectionSocket.send("\r\n\r\n".encode())
             connectionSocket.close()  # closing the connection socket
 
         except Exception as e:
